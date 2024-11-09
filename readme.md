@@ -60,7 +60,7 @@ project-root/
 #### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/twitter-sentiment-analysis.git
+git clone https://github.com/Aafimalek/twitter-sentiment-analysis.git
 cd twitter-sentiment-analysis
 ```
 
