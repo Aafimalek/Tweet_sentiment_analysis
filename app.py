@@ -7,7 +7,7 @@ from flask_cors import CORS
 app = Flask(__name__, static_folder="static", template_folder="templates")
 CORS(app)  # Allow cross-origin requests
 
-BEARER_TOKEN = "AAAAAAAAAAAAAAAAAAAAAGpXwwEAAAAAmC98NIQZodrXjawlo9t8JSsCt4Q%3DOuWXSqlrJa2tfxY1vE8pQ1D304zByXowGxYwK2sMKMmXPMNkO8"
+BEARER_TOKEN = "YOUR-BEARER-TOKEN"
 
 def get_user_id(username):
     url = f"https://api.twitter.com/2/users/by/username/{username}"
