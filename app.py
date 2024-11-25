@@ -7,17 +7,15 @@ from flask_cors import CORS
 app = Flask(__name__, static_folder="static", template_folder="templates")
 CORS(app)  # Allow cross-origin requests
 
-BEARER_TOKEN = "YOUR-BEARER-TOKEN"
-
-def get_user_id(username):
+def get_user_id(username,BEARER_TOKEN):
     url = f"https://api.twitter.com/2/users/by/username/{username}"
     headers = {"Authorization": f"Bearer {BEARER_TOKEN}"}
     response = requests.get(url, headers=headers)
     response.raise_for_status()
     return response.json()["data"]["id"]
 
-def fetch_user_tweets(username, max_results=50):
-    user_id = get_user_id(username)
+def fetch_user_tweets(username,BEARER_TOKEN, max_results=50):
+    user_id = get_user_id(username,BEARER_TOKEN)
     url = f"https://api.twitter.com/2/users/{user_id}/tweets"
     headers = {"Authorization": f"Bearer {BEARER_TOKEN}"}
     params = {"max_results": max_results}
@@ -41,9 +39,10 @@ def index():
 def analyze_sentiments():
     data = request.json
     username = data.get("username")
-
+    BEARER_TOKEN = data.get("token")
+    
     try:
-        tweets = fetch_user_tweets(username)
+        tweets = fetch_user_tweets(username,BEARER_TOKEN)
         tweet_vectors = vectorizer.transform(tweets)
         predictions = model.predict(tweet_vectors)
         sentiments = predictions.tolist()

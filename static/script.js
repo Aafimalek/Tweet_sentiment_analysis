@@ -1,13 +1,16 @@
 async function analyze() {
     const username = document.getElementById("username").value;
+    const token = document.getElementById("token").value;
     const resultsDiv = document.getElementById("results");
-    resultsDiv.innerHTML = "<p>Analyzing tweets...</p>";
+    
+    console.log(username);
+    console.log(token);
 
     try {
         const response = await fetch("http://127.0.0.1:5000/analyze", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username })
+            body: JSON.stringify({ username,token })
         });
         const data = await response.json();
 

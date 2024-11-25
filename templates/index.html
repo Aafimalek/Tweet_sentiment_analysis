@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twitter Sentiment Analysis</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </head>
 <body>
     <div class="container">
         <h1>Twitter Sentiment Analysis</h1>
+        <p>Note:- You need to generate your X bearer token in order to use this site. Go here for more information </p>
+        <input type="text" id="token" placeholder="enter your bearer token" />
         <input type="text" id="username" placeholder="Enter Twitter username" />
         <button onclick="analyze()">Analyze</button>
         <div id="results"></div>
