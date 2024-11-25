@@ -1,2 +1,4 @@
 joblib
 flask
+tweepy
+scikit-learn
