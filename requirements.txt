@@ -3,3 +3,5 @@ flask
 tweepy
 scikit-learn
 gunicorn
+Flask-Cors
+requests
