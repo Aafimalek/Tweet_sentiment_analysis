@@ -11,12 +11,12 @@ body {
 .container {
     width: 90%;
     max-width: 600px;
-    overflow: auto;
     background: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    overflow: auto;
 }
 
 h1 {
@@ -51,6 +51,8 @@ button:hover {
 #results {
     margin-top: 20px;
     text-align: left;
+    overflow: auto;
+    max-height: 400px;
 }
 
 .tweet {
