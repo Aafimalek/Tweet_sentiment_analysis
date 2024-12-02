@@ -105,7 +105,8 @@ python app.py
 ### Screenshots
 
 #### Homepage
-![Homepage](path_to_homepage_screenshot.png)
+![Homepage]![{C59D90A6-411B-40B8-99A9-123B976035C4}](https://github.com/user-attachments/assets/f8e13b3a-19ce-46a2-b02c-32b938201f59)
+
 
 #### Sentiment Analysis Results
 ![Results](path_to_results_screenshot.png)
